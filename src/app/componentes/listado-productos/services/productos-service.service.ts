@@ -9,22 +9,17 @@ import { Productos } from '../productos';
 })
 export class ProductosServiceService {
 
-  productos: any[] = [];
+  Productos: any;
   //Objeto que me permite comunicarme mediante HTTP
-  constructor(private clienteHttp:HttpClient, private dataService:DataServices) { 
-  
+  constructor(private clienteHttp: HttpClient, private dataService: DataServices) { 
+    this.Productos = Productos;
   }
   //Promise signfica promesa, cuando le llame no me espero a que responda; mecanismo de promesas, es programación asíncrona
   getProductos() {
     return this.clienteHttp.get<any[]>("http://localhost:8080/productos/json")
     
-    this.dataService.getProductos(this.productos);
-  }
-  
-  Productos: Productos[]=[
-   // new Productos(0, 'Camiseta12', 'desc', 1, '0', 'camiseta12.png', 'negro'  10, true, false, 1, 3)
-  ];
-
+    this.dataService.getProductos(this.Productos);
+  } 
   mostrarCamisetas(): void {
     
   }
