@@ -25,6 +25,6 @@ import { ProductosServiceService } from './componentes/listado-productos/service
     HttpClientModule
   ],
   providers: [ProductosServiceService,DataServices],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, PiepaginaComponent]
 })
 export class AppModule { }
